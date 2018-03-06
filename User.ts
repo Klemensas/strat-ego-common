@@ -30,9 +30,7 @@ export class User {
   twitter?: any;
   google?: any;
   github?: any;
-
   worlds?: World[];
-
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

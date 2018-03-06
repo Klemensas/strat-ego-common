@@ -15,10 +15,8 @@ export class World {
   initialLoyalty: number;
   loyaltyRegeneration: number;
   loyaltyReductionRange: [number, number];
-
   users?: User[];
-
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 
 }
