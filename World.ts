@@ -1,4 +1,14 @@
 import { User } from './User';
+import { Unit } from './Unit';
+import { Building } from './Building';
+
+export class WorldData {
+  world: World;
+  units: Unit[];
+  unitMap: { [name: string]: Unit };
+  buildings: Building[];
+  buildingMap: { [name: string]: Building };
+}
 
 export class World {
   readonly name: string;
