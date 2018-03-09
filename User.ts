@@ -1,4 +1,4 @@
-import { World } from './World';
+import { World } from './world';
 
 export interface Token {
   id: number;
@@ -6,8 +6,14 @@ export interface Token {
 }
 
 export interface Profile {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
+}
+
+export interface Credentials {
+  name?: string;
+  email: string;
+  password: string;
 }
 
 export type UserRoles = 'admin' | 'member';
@@ -18,7 +24,7 @@ export type UserProviders = 'local' |
   'google' |
   'github';
 
-export class User {
+export interface User {
   readonly id: number;
   name: string;
   email: string;
@@ -30,7 +36,7 @@ export class User {
   twitter?: any;
   google?: any;
   github?: any;
-  worlds?: World[];
+  worlds?: Array<World | Partial<World>>;
   createdAt?: string;
   updatedAt?: string;
 }

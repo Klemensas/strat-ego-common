@@ -12,7 +12,7 @@ export interface Combat {
   };
 }
 
-export class Unit {
+export interface Unit {
   id: number;
   name: string;
   attackType: string;

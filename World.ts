@@ -2,7 +2,7 @@ import { User } from './User';
 import { Unit } from './Unit';
 import { Building } from './Building';
 
-export class WorldData {
+export interface WorldData {
   world: World;
   units: Unit[];
   unitMap: { [name: string]: Unit };
@@ -10,7 +10,7 @@ export class WorldData {
   buildingMap: { [name: string]: Building };
 }
 
-export class World {
+export interface World {
   readonly name: string;
   baseProduction: number;
   speed: number;
@@ -25,7 +25,7 @@ export class World {
   initialLoyalty: number;
   loyaltyRegeneration: number;
   loyaltyReductionRange: [number, number];
-  users?: User[];
+  users?: Array<User | Partial<User>>;
   createdAt?: string;
   updatedAt?: string;
 

@@ -5,7 +5,7 @@ export interface Requirements {
   level: number;
 }
 
-export class Building {
+export interface Building {
   readonly id: number;
   name: string;
   levels: {
