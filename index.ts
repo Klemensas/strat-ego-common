@@ -9,3 +9,4 @@ export * from './map';
 export * from './player';
 export * from './buildingQueue';
 export * from './unitQueue';
+export * from './movement';
