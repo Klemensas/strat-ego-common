@@ -5,3 +5,4 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./alliance"));
 __export(require("./movement"));
+__export(require("./report"));
