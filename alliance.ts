@@ -15,8 +15,56 @@ export type AlliancePermissions = {
 [name in PermissionNames]: boolean;
 };
 
-export type DiplomacyType = 'alliance' | 'war' | 'nap';
-export type DiplomacyStatus = 'pending' | 'ongoing';
+export enum DiplomacyType {
+  'alliance' = 0,
+  'war',
+  'nap',
+}
+export enum DiplomacyStatus {
+  'pending' = 0,
+  'ongoing',
+}
+
+export enum EventType {
+  'diplomacy' = 0,
+  'invitation',
+  'membership',
+  'roles',
+  'management',
+  'forum',
+}
+export enum EventStatus {
+  'proposeAlliance' = 0,
+  'cancelAlliance',
+  'rejectAlliance',
+  'startAlliance',
+  'endAlliance',
+  'proposeNap',
+  'cancelNap',
+  'rejectNap',
+  'startNap',
+  'endNap',
+  'startWar',
+  'endWar',
+  'join',
+  'leave',
+  'remove',
+  'update',
+  'updateMember',
+  'reject',
+  'cancel',
+  'updateProfile',
+  'create',
+}
+
+export const diplomacyTypeToEventStatus = {
+  0: EventStatus.proposeAlliance,
+  2: EventStatus.proposeNap,
+}
+export const diplomacyTypeName = {
+  0: 'Alliance',
+  2: 'Nap',
+}
 
 export type WarDeclarationPayload = { targetName: string; reason: string; };
 
@@ -29,16 +77,6 @@ export const ALLIANCE_PERMISSIONS: PermissionNames[] = [
   'manageRoles',
   'manageAlliance',
 ];
-
-export type EventType = 'diplomacy' | 'membership' | 'forum' | 'roles' | 'invitation' | 'management';
-export type EventStatus =
-  'proposeAlliance' | 'cancelAlliance' | 'rejectAlliance' | 'startAlliance' | 'endAlliance' | 'proposeNap' | 'cancelNap' | 'rejectNap' | 'startNap' | 'endNap' | 'startWar' | 'endWar' |
-  'join' | 'leave' | 'remove' |
-  'update' |
-  'update' | 'updateMember' |
-  'create' | 'reject' | 'cancel' |
-  'updateProfile' | 'create'
-;
 
 export interface Alliance extends BaseModel {
   id: number;
@@ -114,6 +152,11 @@ export interface AllianceMessage extends BaseModel {
   alliance?: Alliance | Partial<Alliance>;
 }
 
+export interface MessagePayload {
+  text: string;
+  messageStamp: number;
+}
+
 export interface AllianceRoleSocketPayload {
   created?: AllianceRole[];
   updated?: AllianceRole[];
@@ -128,4 +171,19 @@ export interface AllianceEventSocketMessage<T> {
 
 export interface AllianceMember extends Profile {
   allianceRole: AllianceRole;
+}
+
+export interface PlayerRolePayload {
+  playerId: number;
+  roleId: number;
+}
+
+export interface RoleUpdatePayload {
+  roles: AllianceRole[];
+  newRoles: AllianceRole[];
+}
+
+export interface ForumCategoryPayload {
+  name: string;
+  description: string;
 }

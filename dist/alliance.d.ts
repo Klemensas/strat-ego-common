@@ -5,15 +5,59 @@ export declare type PermissionNames = 'viewInvites' | 'editInvites' | 'manageFor
 export declare type AlliancePermissions = {
     [name in PermissionNames]: boolean;
 };
-export declare type DiplomacyType = 'alliance' | 'war' | 'nap';
-export declare type DiplomacyStatus = 'pending' | 'ongoing';
+export declare enum DiplomacyType {
+    'alliance' = 0,
+    'war' = 1,
+    'nap' = 2,
+}
+export declare enum DiplomacyStatus {
+    'pending' = 0,
+    'ongoing' = 1,
+}
+export declare enum EventType {
+    'diplomacy' = 0,
+    'invitation' = 1,
+    'membership' = 2,
+    'roles' = 3,
+    'management' = 4,
+    'forum' = 5,
+}
+export declare enum EventStatus {
+    'proposeAlliance' = 0,
+    'cancelAlliance' = 1,
+    'rejectAlliance' = 2,
+    'startAlliance' = 3,
+    'endAlliance' = 4,
+    'proposeNap' = 5,
+    'cancelNap' = 6,
+    'rejectNap' = 7,
+    'startNap' = 8,
+    'endNap' = 9,
+    'startWar' = 10,
+    'endWar' = 11,
+    'join' = 12,
+    'leave' = 13,
+    'remove' = 14,
+    'update' = 15,
+    'updateMember' = 16,
+    'reject' = 17,
+    'cancel' = 18,
+    'updateProfile' = 19,
+    'create' = 20,
+}
+export declare const diplomacyTypeToEventStatus: {
+    0: EventStatus;
+    2: EventStatus;
+};
+export declare const diplomacyTypeName: {
+    0: string;
+    2: string;
+};
 export declare type WarDeclarationPayload = {
     targetName: string;
     reason: string;
 };
 export declare const ALLIANCE_PERMISSIONS: PermissionNames[];
-export declare type EventType = 'diplomacy' | 'membership' | 'forum' | 'roles' | 'invitation' | 'management';
-export declare type EventStatus = 'proposeAlliance' | 'cancelAlliance' | 'rejectAlliance' | 'startAlliance' | 'endAlliance' | 'proposeNap' | 'cancelNap' | 'rejectNap' | 'startNap' | 'endNap' | 'startWar' | 'endWar' | 'join' | 'leave' | 'remove' | 'update' | 'update' | 'updateMember' | 'create' | 'reject' | 'cancel' | 'updateProfile' | 'create';
 export interface Alliance extends BaseModel {
     id: number;
     name: string;
@@ -73,6 +117,10 @@ export interface AllianceMessage extends BaseModel {
     allianceId?: number;
     alliance?: Alliance | Partial<Alliance>;
 }
+export interface MessagePayload {
+    text: string;
+    messageStamp: number;
+}
 export interface AllianceRoleSocketPayload {
     created?: AllianceRole[];
     updated?: AllianceRole[];
@@ -88,4 +136,16 @@ export interface AllianceEventSocketMessage<T> {
 }
 export interface AllianceMember extends Profile {
     allianceRole: AllianceRole;
+}
+export interface PlayerRolePayload {
+    playerId: number;
+    roleId: number;
+}
+export interface RoleUpdatePayload {
+    roles: AllianceRole[];
+    newRoles: AllianceRole[];
+}
+export interface ForumCategoryPayload {
+    name: string;
+    description: string;
 }
