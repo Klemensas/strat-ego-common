@@ -1,3 +1,4 @@
+export * from './baseModel';
 export * from './user';
 export * from './world';
 export * from './town';
@@ -6,4 +7,4 @@ export * from './unit';
 export * from './alliance';
 export * from './map';
 export * from './player';
-export * from './baseModel';
+export * from './buildingQueue';
