@@ -8,3 +8,4 @@ export * from './alliance';
 export * from './map';
 export * from './player';
 export * from './buildingQueue';
+export * from './unitQueue';
