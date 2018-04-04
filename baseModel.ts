@@ -1,4 +1,4 @@
 export interface BaseModel {
-  createdAt?: number;
-  updatedAt?: number;
+  createdAt?: number | string;
+  updatedAt?: number | string;
 }
