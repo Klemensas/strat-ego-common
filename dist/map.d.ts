@@ -7,6 +7,9 @@ export interface MapTown {
     owner: Profile;
     alliance: Profile;
 }
+export interface Map {
+    [coords: string]: MapTown;
+}
 export interface MapAllianceMark {
     [id: number]: string;
 }
