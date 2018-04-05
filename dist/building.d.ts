@@ -1,4 +1,4 @@
-import { Resources } from "./Town";
+import { Resources } from './town';
 export interface Requirements {
     item: string;
     level: number;

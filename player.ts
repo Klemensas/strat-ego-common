@@ -1,6 +1,6 @@
 import { BaseModel } from './baseModel';
 import { Alliance, AllianceRole } from './alliance';
-import { Town } from './Town';
+import { Town } from './town';
 import { Profile } from './user';
 
 export interface Player extends BaseModel {

@@ -1,5 +1,5 @@
-import { Resources } from "./Town";
-import { Requirements } from "./Building";
+import { Resources } from './town';
+import { Requirements } from './building';
 
 export type AttackType = 'general' | 'archer' | 'cavalry' | 'siege';
 

@@ -1,4 +1,4 @@
-import { Resources } from './Town';
+import { Resources } from './town';
 import { BaseModel } from './baseModel';
 
 export interface CombatStrength {

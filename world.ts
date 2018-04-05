@@ -1,6 +1,6 @@
-import { User } from './User';
-import { Unit } from './Unit';
-import { Building } from './Building';
+import { User } from './user';
+import { Unit } from './unit';
+import { Building } from './building';
 
 export interface WorldData {
   world: World;
