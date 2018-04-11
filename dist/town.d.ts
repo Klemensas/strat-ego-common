@@ -40,6 +40,7 @@ export interface Town extends BaseModel {
     resources: Resources;
     units: TownUnits;
     buildings: TownBuildings;
+    score: number;
     playerId?: number;
     player?: Player | Partial<Player>;
     buildingQueues?: Array<BuildingQueue | Partial<BuildingQueue>>;

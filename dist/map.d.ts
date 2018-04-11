@@ -6,6 +6,7 @@ export interface MapTown {
     location: Coords;
     owner: Profile;
     alliance: Profile;
+    score: number;
 }
 export interface Map {
     [coords: string]: MapTown;

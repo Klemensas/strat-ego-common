@@ -12,6 +12,7 @@ export interface Building {
     };
     requirements?: Requirements[];
     data: [{
+        score: number;
         buildTime: number;
         costs: Resources;
         storage?: number;
