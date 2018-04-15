@@ -8,7 +8,7 @@ export interface CombatStrength {
   total?: number;
 }
 
-export const enum MovementType {
+export enum MovementType {
   attack = 0,
   support,
   return,
