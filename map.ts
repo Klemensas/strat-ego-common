@@ -10,10 +10,6 @@ export interface MapTown {
   score: number;
 }
 
-export interface Map {
-  [coords: string]: MapTown;
-}
-
 export interface MapAllianceMark {
   [id: number]: string;
 }
