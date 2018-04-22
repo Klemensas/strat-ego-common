@@ -4,6 +4,7 @@ import { BuildingQueue } from './buildingQueue';
 import { UnitQueue } from './unitQueue';
 import { Movement } from './movement';
 import { Report } from './report';
+import { Dict } from './util';
 
 export interface Resources {
   wood: number;
@@ -25,11 +26,6 @@ export interface TownUnit {
   outside: number;
   queued: number;
 }
-
-export interface TownUnits {
-  [name: string]: TownUnit;
-}
-
 export interface TownError {
   error: string;
   type: string;
@@ -47,7 +43,7 @@ export interface Town extends BaseModel {
   location: Coords;
   production: Resources;
   resources: Resources;
-  units: TownUnits;
+  units: Dict<TownUnit>;
   buildings: TownBuildings;
   score: number;
 
@@ -59,4 +55,15 @@ export interface Town extends BaseModel {
   targetMovements?: Array<Movement | Partial<Movement>>;
   originReports?: Array<Report | Partial<Report>>;
   targetReports?: Array<Report | Partial<Report>>;
+  targetSupport?: Array<TownSupport | Partial<TownSupport>>;
+  originSupport?: Array<TownSupport | Partial<TownSupport>>;
+}
+
+export interface TownSupport extends BaseModel {
+  id: number;
+  units: Dict<number>;
+  originTownId?: number;
+  originTown: Town | Partial<Town>;
+  targetTownId?: number;
+  targetTown: Town | Partial<Town>;
 }
