@@ -20,9 +20,6 @@ export enum MovementTypeName {
   'Return',
 };
 
-
-export type MovementUnit = [string, number];
-
 export interface Movement extends BaseModel {
   id: number;
   units: { [name: string]: number };

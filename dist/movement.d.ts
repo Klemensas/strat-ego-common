@@ -16,7 +16,6 @@ export declare enum MovementTypeName {
     'Support' = 1,
     'Return' = 2,
 }
-export declare type MovementUnit = [string, number];
 export interface Movement extends BaseModel {
     id: number;
     units: {
