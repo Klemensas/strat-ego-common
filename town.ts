@@ -12,6 +12,7 @@ export interface Resources {
   iron: number;
 }
 
+
 export interface TownBuildings {
   [name: string]: {
     level: number;
@@ -66,4 +67,9 @@ export interface TownSupport extends BaseModel {
   originTown: Town | Partial<Town>;
   targetTownId?: number;
   targetTown: Town | Partial<Town>;
+}
+
+export interface RecallPayload {
+  support?: number;
+  movement: Partial<Movement>;
 }
