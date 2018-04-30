@@ -12,3 +12,4 @@ export * from './unitQueue';
 export * from './movement';
 export * from './report';
 export * from './util';
+export * from './socket';

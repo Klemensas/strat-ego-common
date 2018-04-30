@@ -1,5 +1,6 @@
 import { Resources } from './town';
 import { BaseModel } from './baseModel';
+import { Dict } from '.';
 
 export interface CombatStrength {
   general: number;
@@ -19,6 +20,12 @@ export enum MovementTypeName {
   'Support',
   'Return',
 };
+
+
+export interface MovementPayload {
+  units: Dict<number>;
+  type: MovementType;
+}
 
 export interface Movement extends BaseModel {
   id: number;
