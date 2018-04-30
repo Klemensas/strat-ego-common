@@ -44,10 +44,6 @@ var EventStatus;
     EventStatus[EventStatus["updateProfile"] = 19] = "updateProfile";
     EventStatus[EventStatus["create"] = 20] = "create";
 })(EventStatus = exports.EventStatus || (exports.EventStatus = {}));
-exports.diplomacyTypeToEventStatus = {
-    0: EventStatus.proposeAlliance,
-    2: EventStatus.proposeNap,
-};
 exports.diplomacyTypeName = {
     0: 'Alliance',
     2: 'Nap',

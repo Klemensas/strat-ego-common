@@ -57,10 +57,6 @@ export enum EventStatus {
   'create',
 }
 
-export const diplomacyTypeToEventStatus = {
-  0: EventStatus.proposeAlliance,
-  2: EventStatus.proposeNap,
-}
 export const diplomacyTypeName = {
   0: 'Alliance',
   2: 'Nap',

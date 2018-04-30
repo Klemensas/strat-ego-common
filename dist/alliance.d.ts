@@ -45,10 +45,6 @@ export declare enum EventStatus {
     'updateProfile' = 19,
     'create' = 20,
 }
-export declare const diplomacyTypeToEventStatus: {
-    0: EventStatus;
-    2: EventStatus;
-};
 export declare const diplomacyTypeName: {
     0: string;
     2: string;
