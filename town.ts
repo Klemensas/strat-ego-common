@@ -24,7 +24,6 @@ export type Coords = [number, number];
 
 export interface TownUnit {
   inside: number;
-  outside: number;
   queued: number;
 }
 export interface TownError {
