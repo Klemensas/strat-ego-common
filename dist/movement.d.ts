@@ -1,6 +1,6 @@
 import { Resources } from './town';
 import { BaseModel } from './baseModel';
-import { Dict } from '.';
+import { Dict, Town } from '.';
 export interface CombatStrength {
     general: number;
     cavalry: number;
@@ -28,5 +28,9 @@ export interface Movement extends BaseModel {
     };
     haul: Resources;
     type: MovementType;
+    originTownId: number;
+    originTown: Partial<Town>;
+    targetTownId: number;
+    targetTown: Partial<Town>;
     endsAt: string;
 }

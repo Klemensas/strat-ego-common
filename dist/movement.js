@@ -6,7 +6,6 @@ var MovementType;
     MovementType[MovementType["support"] = 1] = "support";
     MovementType[MovementType["return"] = 2] = "return";
 })(MovementType = exports.MovementType || (exports.MovementType = {}));
-;
 var MovementTypeName;
 (function (MovementTypeName) {
     MovementTypeName[MovementTypeName["Attack"] = 0] = "Attack";

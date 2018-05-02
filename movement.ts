@@ -1,6 +1,6 @@
 import { Resources } from './town';
 import { BaseModel } from './baseModel';
-import { Dict } from '.';
+import { Dict, Town } from '.';
 
 export interface CombatStrength {
   general: number;
@@ -13,7 +13,7 @@ export enum MovementType {
   attack = 0,
   support,
   return,
-};
+}
 
 export enum MovementTypeName {
   'Attack' = 0,
@@ -32,5 +32,9 @@ export interface Movement extends BaseModel {
   units: { [name: string]: number };
   haul: Resources;
   type: MovementType;
+  originTownId: number;
+  originTown: Partial<Town>;
+  targetTownId: number;
+  targetTown: Partial<Town>;
   endsAt: string;
 }
