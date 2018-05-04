@@ -57,12 +57,19 @@ export enum EventStatus {
   'create',
 }
 
+export const diplomacyTypeToEventStatus = {
+  0: EventStatus.proposeAlliance,
+  2: EventStatus.proposeNap,
+};
 export const diplomacyTypeName = {
   0: 'Alliance',
   2: 'Nap',
-}
+};
 
-export type WarDeclarationPayload = { targetName: string; reason: string; };
+export interface WarDeclarationPayload {
+  targetName: string;
+  reason: string;
+}
 
 export const ALLIANCE_PERMISSIONS: PermissionNames[] = [
   'viewInvites',
@@ -157,7 +164,7 @@ export interface AllianceRoleSocketPayload {
   created?: AllianceRole[];
   updated?: AllianceRole[];
   removed?: number[];
-  updatedMember?: { id: number; role: AllianceRole }[];
+  updatedMember?: Array<{ id: number; role: AllianceRole }>;
 }
 
 export interface AllianceEventSocketMessage<T> {
@@ -175,8 +182,8 @@ export interface PlayerRolePayload {
 }
 
 export interface RoleUpdatePayload {
-  roles: AllianceRole[];
-  newRoles: AllianceRole[];
+  roles: Array<Partial<AllianceRole>>;
+  newRoles: Array<Partial<AllianceRole>>;
 }
 
 export interface ForumCategoryPayload {

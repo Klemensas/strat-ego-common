@@ -45,14 +45,18 @@ export declare enum EventStatus {
     'updateProfile' = 19,
     'create' = 20,
 }
+export declare const diplomacyTypeToEventStatus: {
+    0: EventStatus;
+    2: EventStatus;
+};
 export declare const diplomacyTypeName: {
     0: string;
     2: string;
 };
-export declare type WarDeclarationPayload = {
+export interface WarDeclarationPayload {
     targetName: string;
     reason: string;
-};
+}
 export declare const ALLIANCE_PERMISSIONS: PermissionNames[];
 export interface Alliance extends BaseModel {
     id: number;
@@ -121,10 +125,10 @@ export interface AllianceRoleSocketPayload {
     created?: AllianceRole[];
     updated?: AllianceRole[];
     removed?: number[];
-    updatedMember?: {
+    updatedMember?: Array<{
         id: number;
         role: AllianceRole;
-    }[];
+    }>;
 }
 export interface AllianceEventSocketMessage<T> {
     event: AllianceEvent;
@@ -138,8 +142,8 @@ export interface PlayerRolePayload {
     roleId: number;
 }
 export interface RoleUpdatePayload {
-    roles: AllianceRole[];
-    newRoles: AllianceRole[];
+    roles: Array<Partial<AllianceRole>>;
+    newRoles: Array<Partial<AllianceRole>>;
 }
 export interface ForumCategoryPayload {
     name: string;
