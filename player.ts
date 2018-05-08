@@ -20,6 +20,6 @@ export interface Player extends BaseModel {
   invitations?: Array<Alliance | Partial<Alliance> | Profile>;
 }
 
-export interface RankProfile extends Profile {
+export interface PlayerProfile extends Profile {
   score?: number;
 }
