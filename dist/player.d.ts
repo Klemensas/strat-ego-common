@@ -7,6 +7,8 @@ export interface Player extends BaseModel {
     id: number;
     userId: number;
     name: string;
+    description: string;
+    avatarUrl: string;
     towns?: Array<Town | Partial<Town>>;
     originReports: Array<Report | Partial<Report>>;
     targetReports: Array<Report | Partial<Report>>;

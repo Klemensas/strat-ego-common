@@ -84,6 +84,8 @@ export const ALLIANCE_PERMISSIONS: PermissionNames[] = [
 export interface Alliance extends BaseModel {
   id: number;
   name: string;
+  description: string;
+  avatarUrl: string;
 
   // Associations
   roles?: Array<AllianceRole | Partial<AllianceRole>>;
@@ -97,6 +99,7 @@ export interface Alliance extends BaseModel {
   diplomacyTarget?: Array<AllianceDiplomacy | Partial<AllianceDiplomacy>>;
   eventOrigin?: Array<AllianceEvent | Partial<AllianceEvent>>;
   eventTarget?: Array<AllianceEvent | Partial<AllianceEvent>>;
+  events?: Array<AllianceEvent | Partial<AllianceEvent>>;
   messages?: Array<AllianceMessage | Partial<AllianceMessage>>;
 }
 
