@@ -18,7 +18,8 @@ var EventType;
     EventType[EventType["membership"] = 2] = "membership";
     EventType[EventType["roles"] = 3] = "roles";
     EventType[EventType["management"] = 4] = "management";
-    EventType[EventType["forum"] = 5] = "forum";
+    EventType[EventType["profile"] = 5] = "profile";
+    EventType[EventType["forum"] = 6] = "forum";
 })(EventType = exports.EventType || (exports.EventType = {}));
 var EventStatus;
 (function (EventStatus) {

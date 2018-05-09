@@ -25,3 +25,8 @@ export interface Player extends BaseModel {
 export interface PlayerProfile extends Profile {
   score?: number;
 }
+
+export interface ProfileUpdate {
+  description?: string;
+  avatarUrl?: string;
+}

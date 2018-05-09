@@ -31,6 +31,7 @@ export enum EventType {
   'membership',
   'roles',
   'management',
+  'profile',
   'forum',
 }
 export enum EventStatus {

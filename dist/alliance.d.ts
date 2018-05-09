@@ -20,7 +20,8 @@ export declare enum EventType {
     'membership' = 2,
     'roles' = 3,
     'management' = 4,
-    'forum' = 5,
+    'profile' = 5,
+    'forum' = 6,
 }
 export declare enum EventStatus {
     'proposeAlliance' = 0,
