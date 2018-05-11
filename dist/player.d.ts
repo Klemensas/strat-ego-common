@@ -9,6 +9,7 @@ export interface Player extends BaseModel {
     name: string;
     description: string;
     avatarUrl: string;
+    score?: number;
     towns?: Array<Town | Partial<Town>>;
     originReports: Array<Report | Partial<Report>>;
     targetReports: Array<Report | Partial<Report>>;

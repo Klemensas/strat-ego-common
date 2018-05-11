@@ -10,6 +10,7 @@ export interface Player extends BaseModel {
   name: string;
   description: string;
   avatarUrl: string;
+  score?: number;
 
   // Associations
   towns?: Array<Town | Partial<Town>>;
