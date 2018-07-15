@@ -21,11 +21,6 @@ export interface TownUnit {
     inside: number;
     queued: number;
 }
-export interface TownError {
-    error: string;
-    type: string;
-    data: any;
-}
 export declare type TownQueues = Array<Partial<BuildingQueue | UnitQueue>>;
 export declare type QueueType = 'Movement' | 'UnitQueue' | 'BuildingQueue';
 export interface Town extends BaseModel {

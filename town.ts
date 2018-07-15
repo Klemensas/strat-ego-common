@@ -26,11 +26,6 @@ export interface TownUnit {
   inside: number;
   queued: number;
 }
-export interface TownError {
-  error: string;
-  type: string;
-  data: any;
-}
 
 export type TownQueues = Array<Partial<BuildingQueue | UnitQueue>>;
 
