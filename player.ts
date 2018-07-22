@@ -10,6 +10,7 @@ export interface Player extends BaseModel {
   name: string;
   description: string;
   avatarUrl: string;
+  tutorialStage: number;
   score?: number;
 
   // Associations
