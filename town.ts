@@ -5,6 +5,7 @@ import { UnitQueue } from './unitQueue';
 import { Movement } from './movement';
 import { Report } from './report';
 import { Dict } from './util';
+import { Profile } from './user';
 
 export interface Resources {
   wood: number;
@@ -66,4 +67,10 @@ export interface TownSupport extends BaseModel {
 export interface RecallPayload {
   support?: number;
   movement: Partial<Movement>;
+}
+
+export interface TownProfile extends Profile {
+  playerId?: number;
+  score?: number;
+  location?: Coords;
 }

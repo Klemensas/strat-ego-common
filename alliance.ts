@@ -194,3 +194,10 @@ export interface ForumCategoryPayload {
   name: string;
   description: string;
 }
+
+export interface AllianceProfile extends Profile {
+  score?: number;
+  members: number[];
+  description?: string;
+  avatarUrl?: string;
+}

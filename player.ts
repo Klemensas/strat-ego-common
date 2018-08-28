@@ -26,6 +26,10 @@ export interface Player extends BaseModel {
 
 export interface PlayerProfile extends Profile {
   score?: number;
+  allianceId?: number;
+  towns: number[];
+  description?: string;
+  avatarUrl?: string;
 }
 
 export interface ProfileUpdate {

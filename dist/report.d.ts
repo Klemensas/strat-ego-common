@@ -1,13 +1,10 @@
 import { Resources, Town } from './town';
 import { BaseModel } from './baseModel';
 import { Player } from './player';
+import { Dict } from './util';
 export interface CombatCasualties {
-    units: {
-        [name: string]: number;
-    };
-    losses: {
-        [name: string]: number;
-    };
+    units: Dict<number>;
+    losses: Dict<number>;
 }
 export interface Haul {
     maxHaul: number;

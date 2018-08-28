@@ -8,6 +8,7 @@ export interface Token {
 export interface Profile {
   id?: number;
   name?: string;
+  createdAt?: number | string;
 }
 
 export interface Credentials {
