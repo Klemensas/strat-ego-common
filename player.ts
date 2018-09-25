@@ -1,6 +1,6 @@
 import { BaseModel } from './baseModel';
 import { Alliance, AllianceRole } from './alliance';
-import { Town } from './town';
+import { Town, TownProfile } from './town';
 import { Profile } from './user';
 import { Report } from '.';
 
@@ -27,7 +27,7 @@ export interface Player extends BaseModel {
 export interface PlayerProfile extends Profile {
   score?: number;
   allianceId?: number;
-  towns: number[];
+  towns?: Array<Partial<TownProfile>>;
   description?: string;
   avatarUrl?: string;
 }

@@ -197,7 +197,7 @@ export interface ForumCategoryPayload {
 
 export interface AllianceProfile extends Profile {
   score?: number;
-  members: number[];
+  members?: Array<Partial<PlayerProfile>>;
   description?: string;
   avatarUrl?: string;
 }

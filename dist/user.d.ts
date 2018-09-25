@@ -4,7 +4,7 @@ export interface Token {
     role: string;
 }
 export interface Profile {
-    id?: number;
+    id: number;
     name?: string;
     createdAt?: number | string;
 }
