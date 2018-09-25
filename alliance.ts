@@ -1,5 +1,5 @@
 import { BaseModel } from './baseModel';
-import { Player } from './player';
+import { Player, PlayerProfile } from './player';
 import { Profile } from '.';
 
 export type PermissionNames =
@@ -123,13 +123,13 @@ export interface AllianceDiplomacy extends BaseModel {
 
   // Associations
   originAllianceId?: number;
-  originAlliance?: Alliance | Partial<Alliance>;
+  originAlliance?: Alliance | AllianceProfile;
   targetAllianceId?: number;
-  targetAlliance?: Alliance | Partial<Alliance>;
+  targetAlliance?: Alliance | AllianceProfile;
   originPlayerId?: number;
-  originPlayer?: Player | Partial<Player>;
+  originPlayer?: Player | PlayerProfile;
   targetPlayerId?: number;
-  targetPlayer?: Player | Partial<Player>;
+  targetPlayer?: Player | PlayerProfile;
 }
 
 export interface AllianceEvent extends BaseModel {
@@ -139,13 +139,13 @@ export interface AllianceEvent extends BaseModel {
 
   // Associations
   originAllianceId?: number;
-  originAlliance?: Alliance | Partial<Alliance>;
+  originAlliance?: Alliance | AllianceProfile;
   targetAllianceId?: number;
-  targetAlliance?: Alliance | Partial<Alliance>;
+  targetAlliance?: Alliance | AllianceProfile;
   originPlayerId?: number;
-  originPlayer?: Player | Partial<Player>;
+  originPlayer?: Player | PlayerProfile;
   targetPlayerId?: number;
-  targetPlayer?: Player | Partial<Player>;
+  targetPlayer?: Player | PlayerProfile;
 }
 
 export interface AllianceMessage extends BaseModel {

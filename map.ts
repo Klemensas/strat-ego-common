@@ -5,7 +5,7 @@ export interface MapTown {
   id: number;
   name: string;
   location: Coords;
-  owner: Profile;
+  player: Profile;
   alliance: Profile;
   score: number;
 }

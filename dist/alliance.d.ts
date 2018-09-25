@@ -1,5 +1,5 @@
 import { BaseModel } from './baseModel';
-import { Player } from './player';
+import { Player, PlayerProfile } from './player';
 import { Profile } from '.';
 export declare type PermissionNames = 'viewInvites' | 'editInvites' | 'manageForum' | 'editProfile' | 'viewManagement' | 'manageRoles' | 'manageAlliance';
 export declare type AlliancePermissions = {
@@ -92,26 +92,26 @@ export interface AllianceDiplomacy extends BaseModel {
     status: DiplomacyStatus;
     data?: any;
     originAllianceId?: number;
-    originAlliance?: Alliance | Partial<Alliance>;
+    originAlliance?: Alliance | AllianceProfile;
     targetAllianceId?: number;
-    targetAlliance?: Alliance | Partial<Alliance>;
+    targetAlliance?: Alliance | AllianceProfile;
     originPlayerId?: number;
-    originPlayer?: Player | Partial<Player>;
+    originPlayer?: Player | PlayerProfile;
     targetPlayerId?: number;
-    targetPlayer?: Player | Partial<Player>;
+    targetPlayer?: Player | PlayerProfile;
 }
 export interface AllianceEvent extends BaseModel {
     id: number;
     type: EventType;
     status: EventStatus;
     originAllianceId?: number;
-    originAlliance?: Alliance | Partial<Alliance>;
+    originAlliance?: Alliance | AllianceProfile;
     targetAllianceId?: number;
-    targetAlliance?: Alliance | Partial<Alliance>;
+    targetAlliance?: Alliance | AllianceProfile;
     originPlayerId?: number;
-    originPlayer?: Player | Partial<Player>;
+    originPlayer?: Player | PlayerProfile;
     targetPlayerId?: number;
-    targetPlayer?: Player | Partial<Player>;
+    targetPlayer?: Player | PlayerProfile;
 }
 export interface AllianceMessage extends BaseModel {
     id?: number;
