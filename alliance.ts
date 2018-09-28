@@ -1,6 +1,6 @@
 import { BaseModel } from './baseModel';
 import { Player, PlayerProfile } from './player';
-import { Profile } from '.';
+import { Profile } from './user';
 
 export type PermissionNames =
 'viewInvites' |
@@ -154,9 +154,9 @@ export interface AllianceMessage extends BaseModel {
 
   // Associations
   playerId?: number;
-  player?: Player | Partial<Player>;
+  player?: Partial<PlayerProfile>;
   allianceId?: number;
-  alliance?: Alliance | Partial<Alliance>;
+  alliance?: Partial<AllianceProfile>;
 }
 
 export interface MessagePayload {
@@ -197,7 +197,7 @@ export interface ForumCategoryPayload {
 
 export interface AllianceProfile extends Profile {
   score?: number;
-  members?: Array<Partial<PlayerProfile>>;
+  members?: Array<PlayerProfile>;
   description?: string;
   avatarUrl?: string;
 }

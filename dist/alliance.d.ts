@@ -1,6 +1,6 @@
 import { BaseModel } from './baseModel';
 import { Player, PlayerProfile } from './player';
-import { Profile } from '.';
+import { Profile } from './user';
 export declare type PermissionNames = 'viewInvites' | 'editInvites' | 'manageForum' | 'editProfile' | 'viewManagement' | 'manageRoles' | 'manageAlliance';
 export declare type AlliancePermissions = {
     [name in PermissionNames]: boolean;
@@ -117,9 +117,9 @@ export interface AllianceMessage extends BaseModel {
     id?: number;
     text?: string;
     playerId?: number;
-    player?: Player | Partial<Player>;
+    player?: Partial<PlayerProfile>;
     allianceId?: number;
-    alliance?: Alliance | Partial<Alliance>;
+    alliance?: Partial<AllianceProfile>;
 }
 export interface MessagePayload {
     text: string;
@@ -155,7 +155,7 @@ export interface ForumCategoryPayload {
 }
 export interface AllianceProfile extends Profile {
     score?: number;
-    members?: Array<Partial<PlayerProfile>>;
+    members?: Array<PlayerProfile>;
     description?: string;
     avatarUrl?: string;
 }
