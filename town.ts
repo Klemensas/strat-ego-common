@@ -65,9 +65,19 @@ export interface TownSupport extends BaseModel {
   targetTown: Town | Partial<Town>;
 }
 
-export interface RecallPayload {
+export interface UpdateSupportPayload {
+  town?: number;
   support?: number;
+}
+
+export interface UpdateSupportSuccessPayload extends UpdateSupportPayload {
   movement: Partial<Movement>;
+}
+
+export interface SupportMovementResult {
+  town: number;
+  movement: number;
+  support: TownSupport;
 }
 
 export interface TownProfile extends Profile {
