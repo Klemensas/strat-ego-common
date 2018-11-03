@@ -19,6 +19,7 @@ export interface Unit {
   speed: number;
   recruitTime: number;
   haul: number;
+  farmSpace: number;
   requirements?: Requirements[];
   costs: Resources;
   combat: Combat;
