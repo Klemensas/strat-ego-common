@@ -6,3 +6,12 @@ export interface ActionError {
     type: string;
     data: any;
 }
+export interface Paging {
+    page: number;
+    pageSize: number;
+}
+export interface Paged<T> {
+    results: T[];
+    total: number;
+    pageSize: number;
+}
